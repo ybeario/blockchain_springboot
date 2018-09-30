@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blockchain?useUnicode=true&characterEncoding=utf-8&SSL=false
+    username: root
+    password: 123
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+  mvc:
+    static-path-pattern: /**
+  redis:
+    host: 127.0.0.1
+    timeout: 100
+    port: 6379
+    password: null
+    lettuce:
+      pool:
+        max-wait: 10
+        max-active: 100
+        max-idle: 10
+        min-idle: 0
+logging:
+  level:
+    com.bear.seckill: debug
+  file: log/blockchain.log
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 8080
