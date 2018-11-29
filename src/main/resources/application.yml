@@ -7,8 +7,12 @@ spring:
   thymeleaf:
     cache: false
     encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
   mvc:
     static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
   redis:
     host: 127.0.0.1
     timeout: 100
@@ -20,6 +24,9 @@ spring:
         max-active: 100
         max-idle: 10
         min-idle: 0
+  devtools:
+    restart:
+      additional-paths: src/main/java
 logging:
   level:
     com.bear.seckill: debug

@@ -1,4 +1,4 @@
-package com.cqupt.bear.blockchain.bdc.web;
+package com.cqupt.bear.blockchain.idp.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,14 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/index")
-public class IndexController {
-	@GetMapping("/restaurant")
-	public String getRestaurant() {
-		return "restaurant";
+public class LoginController {
+	@GetMapping
+	public String getIndex() {
+		return "index";
 	}
 
-	@GetMapping("/styleguide")
-	public String getStyleguide() {
-		return "styleguide";
-	}
+
 }

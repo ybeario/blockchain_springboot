@@ -21,19 +21,20 @@ import com.cqupt.bear.blockchain.aspect.entity.RequestLog;
 public class LogAspect {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
-	@Pointcut("execution(* com.cqupt.bear.blockchain.*.web.*.*(..))")
-	public void log() {
+	// @Pointcut("execution(* com.cqupt.bear.blockchain.*.web.*.*(..))")
+	// public void log() {
+	//
+	// }
 
-	}
-
-	@Before(value = "log()")
+	@Before("execution(* com.cqupt.bear.blockchain.*.web.*.*(..))")
 	public void doBefore(JoinPoint joinPoint) {
-		String classMethod=joinPoint.getSignature().getDeclaringTypeName()+"."+joinPoint.getSignature().getName();
+		String classMethod = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName();
 		Object[] args = joinPoint.getArgs();
-		ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-		String url=requestAttributes.getRequest().getRequestURL().toString();
-		String ip=requestAttributes.getRequest().getRemoteAddr();
-		RequestLog requestLog=new RequestLog(url, ip, classMethod, args);
-		logger.info("Request: {} ",requestLog);
+		ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder
+				.getRequestAttributes();
+		String url = requestAttributes.getRequest().getRequestURL().toString();
+		String ip = requestAttributes.getRequest().getRemoteAddr();
+		RequestLog requestLog = new RequestLog(url, ip, classMethod, args);
+		logger.info("Request: {} ", requestLog);
 	}
 }
