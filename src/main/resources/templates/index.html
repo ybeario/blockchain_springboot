@@ -11,7 +11,7 @@
   <meta name="keywords" content="Pingendo restaurant food aquamarine free template bootstrap 4">
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/aquamarine.css" type="text/css">
+  <link rel="stylesheet" href="/css/aquamarine.css" type="text/css">
   <!-- Script: Make my navbar transparent when the document is scrolled to top -->
   <script src="/js/navbar-ontop.js"></script>
   <!-- Script: Animated entrance -->
@@ -57,9 +57,10 @@
           <form class="p-4 bg-light" method="post" action="/authentication/form">
             <h4 class="mb-4 text-center">登&nbsp; &nbsp; 录</h4>
             <div class="form-group"> <label>用户名</label>
-              <input class="form-control" id="username" required="required"> </div>
+              <input class="form-control" name="username" required="required"> </div>
             <div class="form-group"> <label>密码</label>
-              <input type="password" class="form-control" id="password" required="required"> </div>
+              <input type="password" class="form-control" name="password" required="required"> <small class="form-text text-muted text-right">
+                <a href="/register"> 注册</a></small></div>
             <button type="submit" class="btn mt-4 btn-block p-2 btn-primary"><b class="">登&nbsp; &nbsp;录</b></button>
           </form>
         </div>
@@ -226,9 +227,9 @@
             <h4 class="mb-4 text-center">现在登录！</h4>
             <p class="my-4">即刻登录，享受便捷高效的区块链服务，为您的电子数据提供保障。</p>
             <div class="form-group"> <label>用户名</label>
-              <input class="form-control" id="username" required="required"> </div>
+              <input class="form-control" name="username" required="required"> </div>
             <div class="form-group"> <label>密码</label>
-              <input type="password" class="form-control" id="password" required="required"> </div>
+              <input type="password" class="form-control" name="password" required="required"> </div>
             <button type="submit" class="btn mt-4 btn-block p-2 btn-primary"><b>登&nbsp; &nbsp; 录</b></button>
           </form>
         </div>

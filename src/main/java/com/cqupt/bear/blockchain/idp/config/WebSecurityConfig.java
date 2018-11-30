@@ -15,7 +15,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.formLogin().and().authorizeRequests().anyRequest().authenticated().and().logout().permitAll().and().csrf()
-				.disable();
+		http.formLogin().loginPage("/login").defaultSuccessUrl("/success").failureUrl("/error")
+				.loginProcessingUrl("/authentication/form").permitAll().and().authorizeRequests()
+				.antMatchers("/login", "/assets/**", "/css/**", "/js/**","/index","/register").permitAll().anyRequest().authenticated().and()
+				.logout().permitAll().and().csrf().disable().headers().frameOptions().disable();
+		// http.formLogin().and().authorizeRequests().anyRequest().authenticated().and().csrf().disable();
 	}
 }

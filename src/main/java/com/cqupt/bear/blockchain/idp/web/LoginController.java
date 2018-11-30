@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 创建时间：2018年9月29日 下午3:30:54 类说明
  */
 @Controller
-@RequestMapping("/index")
+@RequestMapping("/login")
 public class LoginController {
 	@GetMapping
 	public String getIndex() {
-		return "index";
+		return "login";
 	}
 
 
