@@ -2,11 +2,14 @@ package com.cqupt.bear.blockchain.common.utils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import org.springframework.security.core.GrantedAuthority;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,7 +19,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
-
 
 public class JsonUtils {
 
@@ -47,9 +49,9 @@ public class JsonUtils {
 	 * @param list
 	 * @return
 	 */
-	public static String listToJson(List<String> list) {
+	public static String collectionToJson(Collection<? extends Object> authorities) {
 		Gson gson = new Gson();
-		return gson.toJson(list, List.class);
+		return gson.toJson(authorities, Collection.class);
 	}
 
 	/**

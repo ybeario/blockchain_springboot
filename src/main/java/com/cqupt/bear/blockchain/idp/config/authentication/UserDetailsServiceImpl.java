@@ -1,4 +1,4 @@
-package com.cqupt.bear.blockchain.idp.config;
+package com.cqupt.bear.blockchain.idp.config.authentication;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,16 +15,28 @@ import org.springframework.stereotype.Component;
  * @version 创建时间：2018年11月28日 下午1:19:41 类说明
  */
 @Component
-public class MyUserDetailsService implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 	private Logger logger = LoggerFactory.getLogger(getClass());
-
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		String password = encoder.encode("123456");
-		logger.info("加盐后密码为：" + password);
-		UserDetails user = User.withUsername(username).password(password).roles("USER").build();
+		Roles role = Roles.USER;
+		switch (username) {
+		case "admin":
+			role = Roles.ADMIN;
+			break;
+
+		case "officer":
+			role = Roles.OFFICER;
+			break;
+
+		case "user":
+			role = Roles.USER;
+			break;
+		}
+		UserDetails user = User.withUsername(username).password(password).roles(role.toString()).build();
 		return user;
 	}
 
