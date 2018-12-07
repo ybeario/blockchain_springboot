@@ -28,10 +28,19 @@ spring:
     restart:
       additional-paths: src/main/java
 logging:
-  level:
-    com.bear.seckill: debug
-  file: log/blockchain.log
+  level: 
+    com.cqupt.bear.blockchain: info
+    org.springframework.security: warn
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 server:
-  port: 8080
+  port: 443
+  ssl:
+    key-store: MyDSKeyStore.jks
+    key-store-password: 123456
+    keyAlias: tomcat
+    protocol: TLS
+    key-password: 123456
+    enabled: true
+  max-http-header-size: 8192
+http.port: 80
