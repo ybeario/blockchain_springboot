@@ -1,6 +1,6 @@
 # block
-区块链电子证据保全项目
-参考网址： ybear-web.com
+区块链电子证据保全项目(个人开发中，未完待续)
+参考网址： https://ybear-web.com/index
 个人博客：https://blog.csdn.net/qq_24407053
 刚刚开通，质量有待提升，大佬请轻喷。。我改！！
 
