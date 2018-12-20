@@ -34,7 +34,7 @@
       <div class="row">
         <div class="mx-auto col-md-6 col-10 bg-white p-5">
           <h1 class="mb-4">Log in</h1>
-          <form action="/authentication/form" method="post">
+          <form th:action="@{/authentication/form}" method="post">
             <div class="form-group"> <input type="text" class="form-control" placeholder="Enter your account" id="form9" required="required" name="username"> </div>
             <div class="form-group mb-3"> <input type="password" class="form-control" placeholder="Password" id="form10" name="password"> <small class="form-text text-muted text-right">
                <span style="color: red;" th:if="${param.error}">用户名或密码错误</span> <a href="#"> Recover password</a>

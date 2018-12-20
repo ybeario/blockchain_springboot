@@ -27,6 +27,11 @@ spring:
   devtools:
     restart:
       additional-paths: src/main/java
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+      enabled: true
 logging:
   level: 
     com.cqupt.bear.blockchain: info

@@ -51,3 +51,6 @@ hs_err_pid*
 
 #  java key store
 *.jks
+
+# evidences
+/evidences/

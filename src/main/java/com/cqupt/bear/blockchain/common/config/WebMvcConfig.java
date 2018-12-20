@@ -1,4 +1,4 @@
-package com.cqupt.bear.blockchain.idp.config;
+package com.cqupt.bear.blockchain.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 
 @Configuration
-public class MvcConfig implements WebMvcConfigurer {
+public class WebMvcConfig implements WebMvcConfigurer {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/error").setViewName("error");
@@ -22,5 +22,6 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/admin").setViewName("admin/adminIndex");
 		registry.addViewController("/officer").setViewName("officer/officerIndex");
 		registry.addViewController("/user").setViewName("user/userIndex");
+		registry.addViewController("/user/upload").setViewName("user/upload");
 	}
 }
