@@ -22,6 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		String password = encoder.encode("123456");
+		logger.info("password:"+password);
 		Roles role = Roles.USER;
 		switch (username) {
 		case "admin":

@@ -30,5 +30,6 @@ public class Wenku {
 			String info = line.replaceAll("[^\u4E00-\u9FA5]", "");
 			System.out.println(info);
 		}
+		br.close();
 	}
 }

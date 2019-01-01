@@ -30,7 +30,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/login", "/assets/**", "/css/**", "/js/**", "/index", "/register").permitAll()
 				.antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/officer/**").hasAnyRole("ADMIN", "OFFICER")
 				.antMatchers("/user/**").hasAnyRole("ADMIN", "OFFICER", "USER").anyRequest().authenticated().and()
-				.logout().permitAll().and().csrf().disable().headers().frameOptions().disable().and().logout()
-				.logoutUrl("/logout").logoutSuccessUrl("/index").invalidateHttpSession(true);
+				.logout().permitAll().and().headers().frameOptions().disable().and().logout().logoutUrl("/logout")
+				.logoutSuccessUrl("/index").invalidateHttpSession(true);
+
 	}
 }

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 /**
@@ -35,13 +36,19 @@ public class UrlFilter implements Filter {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 		String url = httpServletRequest.getRequestURL().toString();
-		logger.info(url);
-		if (url.endsWith(".html")) {
-			url = url.substring(0, url.length() - 5);
-			logger.info("成功处理请求中的.html->>" + url);
-			httpServletResponse.sendRedirect(url);
-		}else {
-			chain.doFilter(request, response);
+		if (url.startsWith("https://127.0.0.1") || url.startsWith("https://ybear-web")
+				|| url.startsWith("https://www.ybear-web")) {
+			logger.info(url);
+			if (url.endsWith(".html")) {
+				url = url.substring(0, url.length() - 5);
+				logger.info("成功处理请求中的.html->>" + url);
+				httpServletResponse.sendRedirect(url);
+			} else {
+				chain.doFilter(request, response);
+			}
+		} else {
+			logger.info(url + "异常，被指向301");
+			httpServletResponse.setStatus(HttpStatus.MOVED_PERMANENTLY.value());
 		}
 	}
 

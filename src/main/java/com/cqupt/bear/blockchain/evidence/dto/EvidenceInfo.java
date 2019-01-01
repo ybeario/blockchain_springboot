@@ -9,17 +9,36 @@ public class EvidenceInfo {
 	private String blockId;
 	private String transactionId;
 	private String height;
+	private BlockchainTransaction transaction;
 
-	public EvidenceInfo(String mD5, String blockId, String transactionId, String height) {
+	public EvidenceInfo(String MD5, String blockId, String transactionId, String height) {
 		super();
-		MD5 = mD5;
+		this.MD5 = MD5;
 		this.blockId = blockId;
 		this.transactionId = transactionId;
 		this.height = height;
 	}
 
+	public EvidenceInfo(String mD5, String blockId, String transactionId, String height,
+			BlockchainTransaction transaction) {
+		super();
+		MD5 = mD5;
+		this.blockId = blockId;
+		this.transactionId = transactionId;
+		this.height = height;
+		this.transaction = transaction;
+	}
+
 	public String getMD5() {
 		return MD5;
+	}
+
+	public BlockchainTransaction getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(BlockchainTransaction transaction) {
+		this.transaction = transaction;
 	}
 
 	public String getBlockId() {

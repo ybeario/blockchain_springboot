@@ -74,7 +74,7 @@
 				</div>
 				<div class="col-lg-5 p-3" sec:authorize="!isAuthenticated()">
 					<form class="p-4 bg-light" method="post"
-						action="/authentication/form">
+						th:action="@{/authentication/form}" >
 						<h4 class="mb-4 text-center">登&nbsp; &nbsp; 录</h4>
 						<div class="form-group">
 							<label>用户名</label> <input class="form-control" name="username"
