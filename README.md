@@ -26,11 +26,11 @@
 6. 尽力完成基于证据链的系统开发
 
 运行方法：
-1.在.yaml配置文件中去除ssl相关配置
-2.安装docker,并在命令行中运行
+1. 在.yaml配置文件中去除ssl相关配置
+2. 安装docker,并在命令行中运行
 ```
 docker run -d --name ethereum -p 8545:8545 -p 30303:30303 ethereum/client-go --rpc --rpcaddr "0.0.0.0" --rpcapi="db,eth,net,web3,personal" --rpccorsdomain "*" --dev
 ```
-3.运行springboot项目
-4.账户user 密码：123456（目前没有集成数据库，是写死的，不能注册）
-5..../user进入功能页面，提供存证和查证功能
+3. 运行springboot项目
+4. 账户user 密码：123456（目前没有集成数据库，是写死的，不能注册）
+5. .../user进入功能页面，提供存证和查证功能
