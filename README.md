@@ -1,8 +1,12 @@
 # block
 区块链电子证据保全项目(个人开发中，未完待续)
 参考网址： https://ybear-web.com/index
-个人博客：https://blog.csdn.net/qq_24407053
-刚刚开通，质量有待提升，大佬请轻喷。。我改！！
+个人博客： https://blog.csdn.net/qq_24407053
+
+
+页面截图及效果参考：
+
+ https://blog.csdn.net/qq_24407053/article/details/85618314
 
 开发环境：
 1. JDK1.8
@@ -12,7 +16,7 @@
 5. Bubi SDK
 6. web3j
 7. EVM
-8.docker
+8. docker
 
 ---
 
