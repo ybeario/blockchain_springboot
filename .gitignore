@@ -50,7 +50,7 @@ hs_err_pid*
 /target/
 
 #  java key store
-*.jks
+# *.jks
 
 # evidences
 /evidences/
