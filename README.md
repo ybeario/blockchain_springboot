@@ -30,7 +30,7 @@
 6. 尽力完成基于证据链的系统开发
 
 运行方法：
-1. 在.yaml配置文件中去除ssl相关配置
+1. 无需更改源码，以maven工程导入
 2. 安装docker,并在命令行中运行
 ```
 docker run -d --name ethereum -p 8545:8545 -p 30303:30303 ethereum/client-go --rpc --rpcaddr "0.0.0.0" --rpcapi="db,eth,net,web3,personal" --rpccorsdomain "*" --dev
