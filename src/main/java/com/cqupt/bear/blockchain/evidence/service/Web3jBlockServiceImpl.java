@@ -38,13 +38,11 @@ public class Web3jBlockServiceImpl implements BlockService {
 		Transaction transaction = Transaction.createEthCallTransaction(accounts.getAccounts().get(trx.getFromId()),
 				accounts.getAccounts().get(trx.getToId()), HexUtils.toHexString(trx.getData().getBytes("UTF-8")));
 		EthSendTransaction response = web3j.ethSendTransaction(transaction).send();
-
 		if (response.getError() != null) {
 			trx.setAccepted(false);
 			LOGGER.info("Tx rejected: {}", response.getError().getMessage());
 			return trx;
 		}
-
 		trx.setAccepted(true);
 		String txHash = response.getTransactionHash();
 		LOGGER.info("Tx hash: {}", txHash);
