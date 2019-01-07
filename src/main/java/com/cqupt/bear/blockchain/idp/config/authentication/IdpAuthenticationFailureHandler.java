@@ -1,16 +1,15 @@
 package com.cqupt.bear.blockchain.idp.config.authentication;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * @author Y.bear
@@ -18,13 +17,13 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class IdpAuthenticationFailureHandler implements AuthenticationFailureHandler {
-	private Logger logger = LoggerFactory.getLogger(getClass());
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
-	@Override
-	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
-			AuthenticationException exception) throws IOException, ServletException {
-		logger.info("登录失败，重定向到Log in 页面");
-		response.sendRedirect("/login?error=true");
-	}
+    @Override
+    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
+                                        AuthenticationException exception) throws IOException, ServletException {
+        logger.info("登录失败，重定向到Log in 页面");
+        response.sendRedirect("/login?error=true");
+    }
 
 }

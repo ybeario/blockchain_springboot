@@ -16,29 +16,29 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {
-	private Logger logger = LoggerFactory.getLogger(getClass());
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		String password = encoder.encode("123456");
-		logger.info("password:"+password);
-		Roles role = Roles.USER;
-		switch (username) {
-		case "admin":
-			role = Roles.ADMIN;
-			break;
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        String password = encoder.encode("123456");
+        logger.info("password:" + password);
+        Roles role = Roles.USER;
+        switch (username) {
+            case "admin":
+                role = Roles.ADMIN;
+                break;
 
-		case "officer":
-			role = Roles.OFFICER;
-			break;
+            case "officer":
+                role = Roles.OFFICER;
+                break;
 
-		case "user":
-			role = Roles.USER;
-			break;
-		}
-		UserDetails user = User.withUsername(username).password(password).roles(role.toString()).build();
-		return user;
-	}
+            case "user":
+                role = Roles.USER;
+                break;
+        }
+        UserDetails user = User.withUsername(username).password(password).roles(role.toString()).build();
+        return user;
+    }
 
 }

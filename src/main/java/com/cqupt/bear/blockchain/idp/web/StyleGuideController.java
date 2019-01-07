@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class StyleGuideController {
-	@GetMapping("/styleguide")
-	public String getStyleguide() {
-		return "styleguide";
-	}
+    @GetMapping("/styleguide")
+    public String getStyleguide() {
+        return "styleguide";
+    }
 }

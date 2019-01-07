@@ -16,22 +16,22 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	@Autowired
-	@Qualifier("idpAuthenticationSuccessHandler")
-	private AuthenticationSuccessHandler successHandler;
-	@Autowired
-	@Qualifier("idpAuthenticationFailureHandler")
-	private AuthenticationFailureHandler failureHandler;
+    @Autowired
+    @Qualifier("idpAuthenticationSuccessHandler")
+    private AuthenticationSuccessHandler successHandler;
+    @Autowired
+    @Qualifier("idpAuthenticationFailureHandler")
+    private AuthenticationFailureHandler failureHandler;
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.formLogin().loginPage("/login").successHandler(successHandler).failureHandler(failureHandler)
-				.loginProcessingUrl("/authentication/form").permitAll().and().authorizeRequests()
-				.antMatchers("/login", "/assets/**", "/css/**", "/js/**", "/index", "/register").permitAll()
-				.antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/officer/**").hasAnyRole("ADMIN", "OFFICER")
-				.antMatchers("/user/**").hasAnyRole("ADMIN", "OFFICER", "USER").anyRequest().authenticated().and()
-				.logout().permitAll().and().headers().frameOptions().disable().and().logout().logoutUrl("/logout")
-				.logoutSuccessUrl("/index").invalidateHttpSession(true);
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.formLogin().loginPage("/login").successHandler(successHandler).failureHandler(failureHandler)
+                .loginProcessingUrl("/authentication/form").permitAll().and().authorizeRequests()
+                .antMatchers("/login", "/assets/**", "/css/**", "/js/**", "/index", "/register").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN").antMatchers("/officer/**").hasAnyRole("ADMIN", "OFFICER")
+                .antMatchers("/user/**").hasAnyRole("ADMIN", "OFFICER", "USER").anyRequest().authenticated().and()
+                .logout().permitAll().and().headers().frameOptions().disable().and().logout().logoutUrl("/logout")
+                .logoutSuccessUrl("/index").invalidateHttpSession(true);
 
-	}
+    }
 }
