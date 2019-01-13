@@ -1,0 +1,53 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blockchain?useUnicode=true&characterEncoding=utf-8&SSL=false
+    username: root
+    password: 123
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
+  redis:
+    host: 127.0.0.1
+    timeout: 100
+    port: 6379
+    password: null
+    lettuce:
+      pool:
+        max-wait: 10
+        max-active: 100
+        max-idle: 10
+        min-idle: 0
+  devtools:
+    restart:
+      additional-paths: src/main/java
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+      enabled: true
+logging:
+  level:
+    com.cqupt.bear.blockchain: info
+    org.springframework.security: warn
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+server:
+  port: 443
+  ssl:
+    key-store: MyDSKeyStore.jks
+    key-store-password: 123456
+    keyAlias: tomcat
+    protocol: TLS
+    key-password: 123456
+    enabled: true
+  max-http-header-size: 8192
+http.port: 80
+web3j:
+  client-address: http://127.0.0.1:8545

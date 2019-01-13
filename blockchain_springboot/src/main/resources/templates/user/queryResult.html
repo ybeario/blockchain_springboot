@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://static.pingendo.com/bootstrap/bootstrap-4.1.3.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-primary" style="">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button"
+                data-toggle="collapse" data-target="#navbar3SupportedContent"
+                aria-controls="navbar3SupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+                class="collapse navbar-collapse text-center justify-content-center"
+                id="navbar3SupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-3"><a class="nav-link text-light"
+                                             href="#"><b>主页</b></a></li>
+                <li class="nav-item mx-2"><a class="nav-link" href="#menu"><b>电子证据保全</b></a>
+                </li>
+                <li class="nav-item mx-2"><a class="nav-link" href="#venue"><b>白皮书</b></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">区块链</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="py-3 text-center bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>证据详情</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-6 p-4">
+                <i class="d-block fa fa-circle fa-3x mb-2 text-muted"></i>
+                <h4>
+                    <b>文件MD5</b>
+                </h4>
+                <p th:text="${md5}" class="text-success"></p>
+            </div>
+            <div class="col-lg-3 col-6 p-4 ">
+                <i class="d-block fa fa-stop-circle-o fa-3x mb-2 text-muted"></i>
+                <h4>交易ID</h4>
+                <p th:text="${transactionId}" class="text-success"></p>
+            </div>
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-lg-3 col-6 p-4">
+                <i class="d-block fa fa-circle-o fa-3x mb-2 text-muted"></i>
+                <h4>
+                    <b>区块高度</b>
+                </h4>
+                <p th:text="${height}" class="text-success"></p>
+            </div>
+            <div class="col-lg-3 col-6 p-4">
+                <i class="d-block fa fa-stop-circle fa-3x mb-2 text-muted"></i>
+                <h4>
+                    <b>BlockID</b>
+                </h4>
+                <p th:text="${blockId}" class="text-success"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Footer -->
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="p-4 col-md-3">
+                <h2 class="mb-4">Y.bear</h2>
+                <p>A company for whatever you may need, from evidence
+                    preservation to protection</p>
+            </div>
+            <div class="p-4 col-md-3">
+                <h2 class="mb-4">Mapsite</h2>
+                <ul class="list-unstyled">
+                    <a href="#" class="text-dark">Home</a>
+                    <br>
+                    <a href="#" class="text-dark">Block Service</a>
+                    <br>
+                    <a href="#" class="text-dark">White book</a>
+                    <br>
+                    <a href="#" class="text-dark">About</a>
+                </ul>
+            </div>
+            <div class="p-4 col-md-3">
+                <h2 class="mb-4">Contact</h2>
+                <p>
+                    <u><a href="#" class="text-dark"> <i
+                            class="fa d-inline mr-3 text-muted fa-phone"></i>+86 -&nbsp;
+                    </a>18883285384</u>
+                </p>
+                <p>
+                    <a href="#" class="text-dark"> <i
+                            class="fa d-inline mr-3 text-muted fa-envelope-o"></i>y
+                    </a>u.jack.bear@gmail.com
+                </p>
+                <p>
+                    <a href="https://www.amap.com/search?query=%E9%87%8D%E9%82%AE"
+                       class="text-dark"> <i
+                            class="fa d-inline mr-3 fa-map-marker text-muted"></i>Chongqing
+                        University of Posts and Telecommunications
+                    </a>
+                </p>
+            </div>
+            <div class="p-4 col-md-3">
+                <h2 class="mb-4">Subscribe</h2>
+                <form>
+                    <fieldset class="form-group">
+                        <label for="exampleInputEmail1">Get our newsletter</label> <input
+                            type="email" class="form-control" placeholder="Enter email">
+                    </fieldset>
+                    <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <p class="text-center">© Copyright 2018 Y.Bear- All rights
+                    reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
